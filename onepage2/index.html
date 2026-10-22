@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小飛俠 PARAGLIDING｜頂級高階飛行傘體驗・御風翱翔</title>
+  <meta name="description" content="小飛俠飛行傘俱樂部——專為熱愛高空冒險與跳傘愛好者打造的頂級飛行品牌。配備歐洲進口頂規傘具、FAI認證教練團、雙備傘安全系統與4K全景影像紀錄，帶您俯瞰壯闊山海。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-yellow: #FFC700;
+      --primary-yellow-hover: #E5B200;
+      --yellow-subtle: #FFF3C4;
+      --yellow-glow: rgba(255, 199, 0, 0.35);
+      --bg-dark: #0A0E17;
+      --bg-surface: #111827;
+      --bg-card: #162033;
+      --bg-card-hover: #1E2B45;
+      --text-white: #FFFFFF;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-yellow: rgba(255, 199, 0, 0.4);
+      --shadow-card: 0 16px 36px rgba(0, 0, 0, 0.35);
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --container-width: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(var(--container-width), calc(100% - 2.5rem));
+      margin-inline: auto;
+    }
+
+    /* 頂部導覽列 Header */
+    header.header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 14, 23, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary-yellow) 0%, #FFA800 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0A0E17;
+      box-shadow: 0 4px 14px var(--yellow-glow);
+    }
+
+    .brand-text h1 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--text-white);
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      color: var(--primary-yellow);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-yellow);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-yellow);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--primary-yellow);
+      color: #0A0E17;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 30px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 16px var(--yellow-glow);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(255, 199, 0, 0.5);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-white);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* 共用按鈕風格 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--primary-yellow);
+      color: #0A0E17;
+      box-shadow: 0 6px 20px var(--yellow-glow);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(255, 199, 0, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary-yellow);
+      color: var(--primary-yellow);
+      background: rgba(255, 199, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* 區塊標題共通樣式 */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 199, 0, 0.12);
+      border: 1px solid rgba(255, 199, 0, 0.3);
+      color: var(--primary-yellow);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      color: var(--text-white);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* 首頁主視覺 Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      padding-bottom: 60px;
+      background: radial-gradient(circle at 80% 20%, rgba(255, 199, 0, 0.15) 0%, transparent 45%),
+                  radial-gradient(circle at 10% 70%, rgba(26, 43, 73, 0.5) 0%, transparent 50%),
+                  var(--bg-dark);
+      overflow: hidden;
+    }
+
+    .hero-glow-lines {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.1), transparent),
+        radial-gradient(1px 1px at 70px 80px, rgba(255, 199, 0, 0.2), transparent);
+      background-size: 100px 100px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 3.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 640px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 199, 0, 0.12);
+      border: 1px solid var(--border-yellow);
+      color: var(--primary-yellow);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-badge .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary-yellow);
+      box-shadow: 0 0 10px var(--primary-yellow);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.3); }
+      100% { opacity: 0.4; transform: scale(0.9); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 4.8vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.18;
+      color: var(--text-white);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title .highlight {
+      color: var(--primary-yellow);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .stat-item .stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary-yellow);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .stat-item .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Hero 右側飛行視覺 HUD */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flight-hud {
+      width: 100%;
+      max-width: 480px;
+      background: linear-gradient(145deg, rgba(22, 32, 51, 0.75), rgba(15, 23, 42, 0.9));
+      border: 1px solid var(--border-yellow);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 199, 0, 0.15);
+      position: relative;
+      backdrop-filter: blur(12px);
+    }
+
+    .flight-hud-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hud-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary-yellow);
+      background: rgba(255, 199, 0, 0.1);
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    .hud-altitude {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .glider-graphic {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .glider-svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 10px 18px rgba(255, 199, 0, 0.3));
+    }
+
+    .hud-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+      background: rgba(10, 14, 23, 0.6);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .metric-box {
+      text-align: center;
+    }
+
+    .metric-val {
+      font-size: 1.1rem;
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-white);
+    }
+
+    .metric-title {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .hud-float-badge {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: var(--primary-yellow);
+      color: #0A0E17;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      box-shadow: 0 8px 20px var(--yellow-glow);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 品牌核心優勢 Section */
+    .features-section {
+      padding: 7rem 0;
+      background-color: var(--bg-surface);
+      position: relative;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.2rem 1.8rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-yellow);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 199, 0, 0.12);
+    }
+
+    .feature-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: rgba(255, 199, 0, 0.1);
+      color: var(--primary-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 199, 0, 0.25);
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* 體驗方案 Section (消費促進主體) */
+    .pricing-section {
+      padding: 7rem 0;
+      background-color: var(--bg-dark);
+      position: relative;
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .package-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .package-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 199, 0, 0.4);
+    }
+
+    .package-card.featured {
+      background: linear-gradient(180deg, #1A263D 0%, #121A2B 100%);
+      border: 2px solid var(--primary-yellow);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 199, 0, 0.2);
+      transform: scale(1.04);
+    }
+
+    .package-card.featured:hover {
+      transform: scale(1.06) translateY(-6px);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-yellow);
+      color: #0A0E17;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px var(--yellow-glow);
+    }
+
+    .package-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .package-level {
+      color: var(--primary-yellow);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .package-name {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--text-white);
+      margin-bottom: 0.8rem;
+    }
+
+    .package-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .price-currency {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-yellow);
+    }
+
+    .price-amount {
+      font-size: 2.6rem;
+      font-weight: 900;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-white);
+      line-height: 1;
+    }
+
+    .price-period {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .package-features {
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+
+    .package-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 0.85rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .check-icon {
+      color: var(--primary-yellow);
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-weight: 900;
+    }
+
+    .package-card .btn {
+      width: 100%;
+    }
+
+    /* 飛行安全保證 Section */
+    .safety-section {
+      padding: 6.5rem 0;
+      background: radial-gradient(circle at center, rgba(22, 32, 51, 0.8) 0%, var(--bg-dark) 100%);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .safety-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .safety-content h3 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--text-white);
+      line-height: 1.3;
+      margin-bottom: 1.2rem;
+    }
+
+    .safety-content p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .safety-checklist {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .safety-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 1.2rem;
+      border-radius: 12px;
+    }
+
+    .safety-item-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(255, 199, 0, 0.15);
+      color: var(--primary-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .safety-item-text h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 0.2rem;
+    }
+
+    .safety-item-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .safety-badge-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-yellow);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .safety-shield {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 1.5rem auto;
+      background: rgba(255, 199, 0, 0.1);
+      border: 2px solid var(--primary-yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-yellow);
+    }
+
+    .safety-shield svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    .safety-badge-panel h4 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--text-white);
+      margin-bottom: 0.6rem;
+    }
+
+    .safety-badge-panel p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* 即時預約 / 試算區塊 Booking Section */
+    .booking-section {
+      padding: 7rem 0;
+      background-color: var(--bg-surface);
+      position: relative;
+    }
+
+    .booking-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-yellow);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+    }
+
+    .booking-form-header h3 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--text-white);
+      margin-bottom: 0.8rem;
+    }
+
+    .booking-form-header p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      background: #0D131F;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      color: var(--text-white);
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-yellow);
+      box-shadow: 0 0 0 3px rgba(255, 199, 0, 0.2);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .addon-options {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      accent-color: var(--primary-yellow);
+      width: 16px;
+      height: 16px;
+    }
+
+    /* 試算小計面板 */
+    .summary-panel {
+      background: #0F1726;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .summary-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .summary-total {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.2rem;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .total-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-white);
+    }
+
+    .total-amount {
+      font-size: 2.2rem;
+      font-weight: 900;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary-yellow);
+    }
+
+    .booking-notice {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    /* 學員評價 Testimonials */
+    .reviews-section {
+      padding: 7rem 0;
+      background-color: var(--bg-dark);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+
+    .review-card:hover {
+      border-color: rgba(255, 199, 0, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .stars {
+      color: var(--primary-yellow);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+
+    .review-quote {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .reviewer-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reviewer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #23334E;
+      color: var(--primary-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      border: 2px solid var(--border-yellow);
+    }
+
+    .reviewer-info h5 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-white);
+    }
+
+    .reviewer-info span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* 常見問題 FAQ */
+    .faq-section {
+      padding: 6rem 0 8rem 0;
+      background-color: var(--bg-surface);
+    }
+
+    .faq-accordion {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .faq-item.active {
+      border-color: var(--border-yellow);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 1.3rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-icon {
+      color: var(--primary-yellow);
+      font-size: 1.4rem;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out;
+      background: #0F1726;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-answer-inner {
+      padding: 1.2rem 1.5rem;
+    }
+
+    /* 頁尾 Footer */
+    footer.footer {
+      background: #070A10;
+      border-top: 1px solid var(--border-color);
+      padding: 5rem 0 2rem 0;
+      color: var(--text-muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--primary-yellow);
+      margin-top: 6px;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.7rem;
+      font-size: 0.92rem;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--primary-yellow);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* 預約成功彈窗 Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--bg-card);
+      border: 2px solid var(--primary-yellow);
+      border-radius: 20px;
+      max-width: 480px;
+      width: 100%;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(255, 199, 0, 0.15);
+      color: var(--primary-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem auto;
+      font-size: 2rem;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--text-white);
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
+    }
+
+    /* 響應式 RWD Media Queries */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-content {
+        margin: 0 auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
+      .packages-grid {
+        grid-template-columns: 1fr;
+        max-width: 460px;
+        margin: 0 auto;
+      }
+
+      .package-card.featured {
+        transform: none;
+      }
+
+      .package-card.featured:hover {
+        transform: translateY(-6px);
+      }
+
+      .safety-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-card {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: #0D131F;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.2rem;
+        border-bottom: 1px solid var(--border-color);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+      }
+
+      .nav-menu.open {
+        transform: translateY(0);
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="小飛俠飛行傘首頁">
+        <div class="brand-icon">
+          <!-- 飛行傘幾何 SVG Icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.5 2 2 6 2 8c0 1.5 10 9 10 9s10-7.5 10-9c0-2-4.5-6-10-6z"/>
+            <path d="M12 2v15"/>
+            <path d="M6 5.5l6 11.5"/>
+            <path d="M18 5.5l-6 11.5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>小飛俠 <span>PETER PAN PARAGLIDING</span></h1>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link">品牌優勢</a></li>
+        <li><a href="#packages" class="nav-link">飛行方案</a></li>
+        <li><a href="#safety" class="nav-link">安全認證</a></li>
+        <li><a href="#booking" class="nav-link">即時試算</a></li>
+        <li><a href="#faq" class="nav-link">常見問題</a></li>
+      </ul>
+
+      <a href="#booking" class="nav-cta">
+        <span>立即預約</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="切換選單">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- 首屏 Hero 區塊 -->
+  <section class="hero" id="home">
+    <div class="hero-glow-lines"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>高階飛行傘首選品牌・全台最高飛行高度</span>
+        </div>
+        <h2 class="hero-title">
+          御風而行，征服天際<br>
+          開啟您的<span class="highlight">頂級高空冒險</span>
+        </h2>
+        <p class="hero-subtitle">
+          小飛俠專為跳傘愛好者與追求極限視野的你而生。全套引進歐洲最高安全性認證傘具、國家級教練全程一對一隨行，帶你在千米雲海之上，享受極致自由與心跳震撼。
+        </p>
+        <div class="hero-actions">
+          <a href="#packages" class="btn btn-primary">
+            <span>探索飛行方案</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#safety" class="btn btn-outline">
+            <span>檢視安全防護規格</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">10,000+</span>
+            <span class="stat-label">累積安全起降架次</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">1,200m</span>
+            <span class="stat-label">最高盤旋巡航高度</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">雙備傘獨立防護系統</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右欄圖片 -->
+      <div class="hero-visual" style="display: flex; justify-content: center; align-items: center;">
+        <img src="images/hero.jpg" alt="小飛俠高階飛行傘" width="400" height="300" style="width: 400px; max-width: 100%; height: 300px; object-fit: cover; border-radius: 16px; border: 1px solid var(--border-yellow); box-shadow: var(--shadow-card);">
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌優勢 Section -->
+  <section class="features-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">PREMIUM STANDARD</div>
+        <h2 class="section-title">高階飛行標準，重新定義高空體驗</h2>
+        <p class="section-desc">跳傘愛好者指定的頂規俱樂部。我們拒絕流水線式的短暫滑翔，專注於長滯空、高海拔盤旋與極限操控體驗。</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-title">歐洲 EN-A/B 認證傘具</h3>
+          <p class="feature-desc">全機隊採購瑞士 Advance 及奧地利頂級競技型雙人傘，具備極致滑翔比與氣流穿透性，確保航程穩定安心。</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          </div>
+          <h3 class="feature-title">國際 FAI 認證總教練</h3>
+          <p class="feature-desc">教練團均具備 15 年以上高空跳傘及滑翔傘資歷，累積起降破千小時，具備卓越熱氣流搜集與突發應變技術。</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <h3 class="feature-title">4K 60FPS 全景空拍攝影</h3>
+          <p class="feature-desc">隨行配備最新款 GoPro 與 360 度全景運動相機，定格起飛爆發力、千米雲端穿越與個人特寫，當日即時傳輸檔案。</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="feature-title">專屬越野接駁與起飛貴賓席</h3>
+          <p class="feature-desc">配備四驅全地形越野車直送山頂高空起飛平台，並提供專屬遮陽觀景休息室與冷熱飲品，提供極致尊榮服務。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 飛行體驗方案 Section (消費促進主體) -->
+  <section class="pricing-section" id="packages">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">FLIGHT PACKAGES</div>
+        <h2 class="section-title">精選高階飛行方案</h2>
+        <p class="section-desc">從初次御風的經典巡航，到深度玩家嚮往的千米熱氣流越野特技，滿足每一位冒險家的飛行渴望。</p>
+      </div>
+
+      <div class="packages-grid">
+        <!-- 方案 1 -->
+        <div class="package-card">
+          <div class="package-header">
+            <div class="package-level">ENTRY LEVEL</div>
+            <h3 class="package-name">蔚藍經典巡航</h3>
+            <div class="package-price">
+              <span class="price-currency">NT$</span>
+              <span class="price-amount">3,200</span>
+              <span class="price-period">/ 人次</span>
+            </div>
+          </div>
+          <ul class="package-features">
+            <li><span class="check-icon">✓</span> 飛行滯空時間約 12-18 分鐘</li>
+            <li><span class="check-icon">✓</span> 頂規雙人傘具與完整安全裝備</li>
+            <li><span class="check-icon">✓</span> 國家級合格教練全程一對一操控</li>
+            <li><span class="check-icon">✓</span> 基礎起飛場越野專車接駁</li>
+            <li><span class="check-icon">✓</span> 新台幣 500 萬高額意外責任險</li>
+          </ul>
+          <a href="#booking" class="btn btn-outline" onclick="selectPackage('蔚藍經典巡航', 3200)">立即選擇此方案</a>
+        </div>
+
+        <!-- 方案 2 (最受歡迎 - 尊爵高階) -->
+        <div class="package-card featured">
+          <div class="popular-tag">🔥 跳傘玩家力推・熱門首選</div>
+          <div class="package-header">
+            <div class="package-level">MOST POPULAR</div>
+            <h3 class="package-name">千米熱氣流深空越野</h3>
+            <div class="package-price">
+              <span class="price-currency">NT$</span>
+              <span class="price-amount">5,800</span>
+              <span class="price-period">/ 人次</span>
+            </div>
+          </div>
+          <ul class="package-features">
+            <li><span class="check-icon">✓</span> 飛行滯空約 30-40 分鐘（雙倍時長）</li>
+            <li><span class="check-icon">✓</span> 盤旋爬升至海拔 1,000 公尺以上高空</li>
+            <li><span class="check-icon">✓</span> 贈 4K 60FPS 運動錄影 + 空拍檔案</li>
+            <li><span class="check-icon">✓</span> 雲端俯衝與大角度盤旋體感（可客製）</li>
+            <li><span class="check-icon">✓</span> 貴賓專屬起降點冷氣休息室</li>
+            <li><span class="check-icon">✓</span> 頒發小飛俠專屬越野飛行榮譽證書</li>
+          </ul>
+          <a href="#booking" class="btn btn-primary" onclick="selectPackage('千米熱氣流深空越野', 5800)">立即預訂熱氣流飛行</a>
+        </div>
+
+        <!-- 方案 3 -->
+        <div class="package-card">
+          <div class="package-header">
+            <div class="package-level">EXTREME ACRO</div>
+            <h3 class="package-name">極限特技與進階培訓</h3>
+            <div class="package-price">
+              <span class="price-currency">NT$</span>
+              <span class="price-amount">8,800</span>
+              <span class="price-period">/ 人次起</span>
+            </div>
+          </div>
+          <ul class="package-features">
+            <li><span class="check-icon">✓</span> 高G重力螺旋下降（Spiral Dive）</li>
+            <li><span class="check-icon">✓</span> 翼尖搖擺極限動態操控感受（Wingover）</li>
+            <li><span class="check-icon">✓</span> 360° 雙鏡頭多視角 4K 剪輯影片</li>
+            <li><span class="check-icon">✓</span> 獨立操控單人飛行執照（P1/P2）諮詢</li>
+            <li><span class="check-icon">✓</span> 總教練專屬 1 對 1 飛行空氣動力學講解</li>
+          </ul>
+          <a href="#booking" class="btn btn-outline" onclick="selectPackage('極限特技與進階培訓', 8800)">洽詢極限特技方案</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5.5 沖煮日常／安全保證與認證規格 Section -->
+  <section class="safety-section" id="safety">
+    <div class="container safety-layout">
+      <!-- 左欄：影片崁入 -->
+      <div class="safety-video-panel" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+        <div class="video-container" style="position: relative; width: 100%; max-width: 560px; aspect-ratio: 560 / 315; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border-yellow);">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/hMOYa4EBntI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+      </div>
+
+      <!-- 右欄：安全防護機制與認證面板 -->
+      <div class="safety-content">
+        <div class="section-tag">SAFETY FIRST</div>
+        <h3>我們對安全的承諾，遠超業界嚴苛標準</h3>
+        <p>對於極限飛行愛好者而言，無後顧之憂的防護才是盡情享受翱翔的基石。小飛俠堅持採用航空等級維護標準，守護每一次雲端之旅。</p>
+        
+        <div class="safety-checklist">
+          <div class="safety-item">
+            <div class="safety-item-icon">1</div>
+            <div class="safety-item-text">
+              <h4>雙重獨立備用副傘系統</h4>
+              <p>每套傘具均配置經氣動檢測的最新備用傘，由合格傘檢師定期折疊打包與壓力檢驗。</p>
+            </div>
+          </div>
+
+          <div class="safety-item">
+            <div class="safety-item-icon">2</div>
+            <div class="safety-item-text">
+              <h4>微型高空氣象雷達即時連線</h4>
+              <p>即時監控起飛場與空域之風速、陣風、氣流升降及熱對流狀況，未達安全指數絕不起飛。</p>
+            </div>
+          </div>
+
+          <div class="safety-item">
+            <div class="safety-item-icon">3</div>
+            <div class="safety-item-text">
+              <h4>五點式防護氣囊保護座袋</h4>
+              <p>人體工學設計座袋配備厚實氣囊緩衝，無論在飛行姿態或降落觸地時均提供頂尖抗震吸能保護。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="safety-badge-panel" style="margin-top: 2rem;">
+          <div class="safety-shield">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h4>100% 雙備傘安全承諾</h4>
+          <p>小飛俠擁有全台唯一具備高空熱對流實時監測站的私有基地，並投保業界最高新台幣 500 萬元特約活動責任險。</p>
+          <div style="display: flex; justify-content: center; gap: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+            <div>
+              <div style="font-size: 1.3rem; font-weight: 800; color: var(--primary-yellow); font-family: 'Montserrat';">0 事故</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">歷史安全防護紀錄</div>
+            </div>
+            <div>
+              <div style="font-size: 1.3rem; font-weight: 800; color: var(--primary-yellow); font-family: 'Montserrat';">100%</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">傘裝備檢核合格率</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 預約試算與表單 Section (促成消費轉化) -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">ONLINE RESERVATION</div>
+        <h2 class="section-title">即時試算與專屬飛行預約</h2>
+        <p class="section-desc">選擇心儀的飛行專案與日期，系統將自動為您試算費用，專屬飛行秘書將於 2 小時內為您確認空域排程。</p>
+      </div>
+
+      <div class="booking-card">
+        <!-- 預約表單 -->
+        <form id="flightForm" onsubmit="handleBooking(event)">
+          <div class="booking-form-header">
+            <h3>填寫飛行預約資訊</h3>
+            <p>請填寫您的基本聯絡方式與偏好日期</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="packageName">飛行專案選擇</label>
+            <select class="form-control" id="packageName" onchange="updateTotal()">
+              <option value="3200" data-name="蔚藍經典巡航">蔚藍經典巡航 (NT$ 3,200 / 人)</option>
+              <option value="5800" data-name="千米熱氣流深空越野" selected>千米熱氣流深空越野 (NT$ 5,800 / 人) ⭐最熱門</option>
+              <option value="8800" data-name="極限特技與進階培訓">極限特技與進階培訓 (NT$ 8,800 / 人)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="flightDate">預計飛行日期</label>
+              <input type="date" class="form-control" id="flightDate" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="passengerCount">預約人數</label>
+              <select class="form-control" id="passengerCount" onchange="updateTotal()">
+                <option value="1">1 位旅客</option>
+                <option value="2">2 位同行</option>
+                <option value="3">3 位同行</option>
+                <option value="4">4 位同行 (贈送專屬空拍剪輯)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="userName">預約人姓名</label>
+              <input type="text" class="form-control" id="userName" placeholder="請輸入姓名" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="userPhone">聯絡電話</label>
+              <input type="tel" class="form-control" id="userPhone" placeholder="0912-345-678" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">升級加值服務</label>
+            <div class="addon-options">
+              <label class="checkbox-label">
+                <input type="checkbox" id="addonGopro" value="800" onchange="updateTotal()">
+                4K 60FPS GoPro 全景錄影空拍包 (NT$ 800)
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="addonTransfer" value="500" onchange="updateTotal()">
+                高鐵/火車站 VIP 專車來回直達接送 (NT$ 500)
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="addonCertificate" value="300" onchange="updateTotal()">
+                精裝版金屬刻字個人高空首飛成就勳章 (NT$ 300)
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            <span>確認送出預約需求</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <!-- 即時試算小計面板 -->
+        <div class="summary-panel">
+          <div>
+            <h4 class="summary-title">訂單即時試算</h4>
+            <div class="summary-list">
+              <div class="summary-row">
+                <span>方案項目：</span>
+                <span id="summaryPackage" style="color: var(--text-white); font-weight: 700;">千米熱氣流深空越野</span>
+              </div>
+              <div class="summary-row">
+                <span>人數：</span>
+                <span id="summaryCount">1 位</span>
+              </div>
+              <div class="summary-row">
+                <span>專案基底費用：</span>
+                <span id="summaryBasePrice">NT$ 5,800</span>
+              </div>
+              <div class="summary-row">
+                <span>加值項目合計：</span>
+                <span id="summaryAddons">NT$ 0</span>
+              </div>
+              <div class="summary-row">
+                <span>保險與空域規費：</span>
+                <span style="color:#10B981;">已全額內含 (NT$ 0)</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="summary-total">
+              <span class="total-title">預估應付金額</span>
+              <span class="total-amount" id="summaryTotal">NT$ 5,800</span>
+            </div>
+            <p class="booking-notice">
+              * 提示：送出預約後將由專業飛行排班專員與您確認當日空域天氣，若因氣候不可抗力取消，將全額退款或免費延期。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 跳傘愛好者口碑評價 Section -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">TESTIMONIALS</div>
+        <h2 class="section-title">跳傘同好與飛行家的真實評價</h2>
+        <p class="section-desc">聽聽體驗過小飛俠高空航程的冒險家們怎麼說。</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">
+              「身為跳傘經驗者，原本以為飛行傘速度感較緩和，沒想到小飛俠的熱氣流盤旋教練直接帶我爬升超過一千米！雲海就在腳下翻騰，特技螺旋的離心力讓人血脈賁張，設備跟教練專業度絕對是全台頂尖！」
+            </p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">高</div>
+            <div class="reviewer-info">
+              <h5>高振邦</h5>
+              <span>USPA 跳傘 C 照愛好者・越野體驗</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">
+              「裝備真的是一分錢一分貨！小飛俠用的 Advance 傘具超級平穩，五點式安全座袋坐起來舒適又有滿滿安全感。起飛前教練的簡報非常專業，4K空拍影片畫質好到直接可以當手機桌布！」
+            </p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">林</div>
+            <div class="reviewer-info">
+              <h5>林芷芸</h5>
+              <span>極限運動攝影師・熱氣流巡航</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">
+              「第一次帶全家人體驗，專屬 VIP 接駁車跟山頂休息室非常貼心。教練掌控風向非常精準，降落平穩得像走下樓梯一樣，小飛俠絕對是追求品質與安全的首選！」
+            </p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">陳</div>
+            <div class="reviewer-info">
+              <h5>陳建宏</h5>
+              <span>企業負責人・VIP 雙人方案</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常見問題 FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">常見問答</h2>
+        <p class="section-desc">解答您在體驗高階飛行傘前可能遇到的所有疑問。</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>跳傘與飛行傘有何不同？沒有經驗可以參加嗎？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              跳傘主要強調出艙瞬間的自由落體（Freefall）與開傘降落；而高階飛行傘則是完全利用大氣升力與熱氣流進行「長時數巡航與高空盤旋」，滯空時間可達 30-40 分鐘。所有方案均為專業教練雙人共乘（Tandem），即使零經驗也能在教練帶領下輕鬆感受天際魅力。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>參加飛行傘活動有體重或年齡限制嗎？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              為確保氣動性能與安全平衡，乘客體重限制為 30 公斤至 105 公斤之間。年齡建議為 7 歲以上至 68 歲以下，且無心臟病、高血壓病史或孕婦均可參加。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>若遇天候不佳或風速不符標準如何處理？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              小飛俠以 100% 安全為最高原則。飛行前日及當日教練團均會嚴格比對氣象雷達。若因天候無法放行，我們提供免費延期保留資格，或無條件全額退還預付款項。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>4K 攝影檔案如何領取？需要自行攜帶 SD 卡嗎？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              現場皆使用專業高速記憶卡為您錄製。降落後專員將直接透過高速讀卡機或專屬無線傳輸連線，將原畫質 4K 影片直接傳送至您的手機中，即刻分享至社交平台。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 頁尾 Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1.2rem;">
+            <div class="brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2C6.5 2 2 6 2 8c0 1.5 10 9 10 9s10-7.5 10-9c0-2-4.5-6-10-6z"/>
+                <path d="M12 2v15"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <h4 style="margin: 0; font-size: 1.2rem;">小飛俠</h4>
+              <span style="font-size: 0.65rem;">PETER PAN PARAGLIDING</span>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem;">
+            小飛俠致力於為熱愛自由冒險的玩家提供最專業、安全、尊榮的高階飛行傘體驗。御風而行，擁抱極限。
+          </p>
+          <div style="color: var(--primary-yellow); font-size: 0.85rem; font-weight: 700;">
+            營業時間：週一至週日 06:00 - 18:00
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>快速連結</h4>
+          <ul>
+            <li><a href="#about">品牌優勢</a></li>
+            <li><a href="#packages">飛行專案</a></li>
+            <li><a href="#safety">安全標準</a></li>
+            <li><a href="#booking">費用試算</a></li>
+            <li><a href="#faq">常見問題</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>熱門空域據點</h4>
+          <ul>
+            <li>花蓮萬榮高空起飛場 (海拔 680M)</li>
+            <li>南投埔里虎頭山全景基地 (海拔 800M)</li>
+            <li>宜蘭外澳海景飛行場 (山海巡航)</li>
+            <li>屏東賽嘉熱對流基地 (全天候訓練場)</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>專屬飛行預約專線</h4>
+          <ul>
+            <li>📞 客服熱線：0800-888-007</li>
+            <li>📱 官方 Line：@peterpan_fly</li>
+            <li>✉️ 信箱：service@peterpan-paragliding.tw</li>
+            <li>📍 基地接待中心：台灣省空域安全特許飛行基地 01 號</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 小飛俠 PARAGLIDING CLUB. 版權所有・全規格安全認證基地。
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#home">回到頂部 ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 預約成功彈窗 Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <div class="modal-icon">✓</div>
+      <h3 class="modal-title">飛行預約需求已送出！</h3>
+      <p class="modal-desc" id="modalDetail">
+        感謝您選擇小飛俠高階飛行傘！我們已收到您的飛行申請，飛行督導將於 2 小時內透過電話與您核對空域與接駁細節。
+      </p>
+      <button class="btn btn-primary" onclick="closeModal()" style="width: 100%;">
+        太棒了，期待起飛！
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // 預設日期為明天
+    document.addEventListener('DOMContentLoaded', () => {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const dateStr = tomorrow.toISOString().split('T')[0];
+      const dateInput = document.getElementById('flightDate');
+      if (dateInput) {
+        dateInput.value = dateStr;
+        dateInput.min = dateStr;
+      }
+      updateTotal();
+    });
+
+    // 行動選單開關
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // 點擊選單連結自動關閉
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+
+    // FAQ 手風琴切換
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isActive = item.classList.contains('active');
+
+        // 關閉其他項目
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.faq-answer').style.maxHeight = null;
+          }
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        } else {
+          item.classList.remove('active');
+          answer.style.maxHeight = null;
+        }
+      });
+    });
+
+    // 從方案卡片點擊「立即預訂」快速聯動
+    function selectPackage(name, price) {
+      const select = document.getElementById('packageName');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.includes(name) || parseInt(select.options[i].value) === price) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      updateTotal();
+    }
+
+    // 金額試算核心邏輯
+    function updateTotal() {
+      const packageSelect = document.getElementById('packageName');
+      const basePrice = parseInt(packageSelect.value);
+      const packageName = packageSelect.options[packageSelect.selectedIndex].getAttribute('data-name');
+      const count = parseInt(document.getElementById('passengerCount').value);
+
+      let addonTotalPerPerson = 0;
+      if (document.getElementById('addonGopro').checked) addonTotalPerPerson += 800;
+      if (document.getElementById('addonTransfer').checked) addonTotalPerPerson += 500;
+      if (document.getElementById('addonCertificate').checked) addonTotalPerPerson += 300;
+
+      const totalAddons = addonTotalPerPerson * count;
+      const finalTotal = (basePrice * count) + totalAddons;
+
+      // 更新畫面
+      document.getElementById('summaryPackage').textContent = packageName;
+      document.getElementById('summaryCount').textContent = `${count} 位`;
+      document.getElementById('summaryBasePrice').textContent = `NT$ ${(basePrice * count).toLocaleString()}`;
+      document.getElementById('summaryAddons').textContent = `NT$ ${totalAddons.toLocaleString()}`;
+      document.getElementById('summaryTotal').textContent = `NT$ ${finalTotal.toLocaleString()}`;
+    }
+
+    // 送出預約
+    function handleBooking(event) {
+      event.preventDefault();
+      const name = document.getElementById('userName').value;
+      const count = document.getElementById('passengerCount').value;
+      const date = document.getElementById('flightDate').value;
+      const total = document.getElementById('summaryTotal').textContent;
+      const packageName = document.getElementById('summaryPackage').textContent;
+
+      document.getElementById('modalDetail').innerHTML = `
+        貴賓 <strong>${name}</strong> 您好！<br>
+        您預約的 <strong>【${packageName}】</strong> 共 <strong>${count} 位</strong>，<br>
+        預定日期為 <strong>${date}</strong>，試算總金額 <strong>${total}</strong>。<br>
+        小飛俠專屬飛行地勤專員將在 2 小時內去電確認氣象空域排程！
+      `;
+
+      document.getElementById('bookingModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('bookingModal').classList.remove('active');
+      document.getElementById('flightForm').reset();
+      updateTotal();
+    }
+  </script>
+</body>
+</html>
